@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 
 <head>
@@ -8,37 +8,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="stylesheets/sectionartevisual.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
 
 <body>
+    <div id="imagens">
+        <ul>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg1.jpg" style="width:60px;">   </li>
+            <input type="button" id="img1" value="Escolher" onclick="mudarImg1()"/>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg2.png" style="width:60px;">   </li>
+            <input type="button" id="img2" value="Escolher" onclick="mudarImg2()"/>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg3.jpg" style="width:60px;">   </li>
+            <input type="button" id="img3" value="Escolher" onclick="mudarImg3()"/>
+            <br>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg4.png" style="width:60px;">   </li>
+            <input type="button" id="img4" value="Escolher" onclick="mudarImg4()"/>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg5.png" style="width:60px;">   </li>
+            <input type="button" id="img5" value="Escolher" onclick="mudarImg5()"/>
+            <li> <img src="https://midiapost-lfvasconcellos.c9users.io/images/bg6.png" style="width:60px;">   </li>
+            <input type="button" id="img6" value="Escolher" onclick="mudarImg6()"/>
+        </ul>
+    </div>
+    <div id="controles">
+           <input type="button" class="botao" value="Carregar logos realização e apoio"/><br><br>
+            
+            <label>Cor fundo título: </label>
+            <input style="width:30px;"oninput="mudarCorFundoTitulo()" type="color" id="corfundotitulo"/><br>
+            <label>Cor fundo subtitulo: </label>
+            <input style="width:30px;"oninput="mudarCorFundoSubTitulo()" type="color" id="corfundosubtitulo"/><br>
+            <label>Cor realização e apoio: </label>
+            <input style="width:30px;"oninput="mudarCorApoio()" type="color" id="corapoio"/><br><br>
+            
+            <label>Digite campo 1: </label>
+            <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV"/>
+            <input style="width:30px;"oninput="mudarCorTitulo()" type="color" id="cortitulo"/><br><br>
+
+            <label>Digite campo 2: </label>
+            <input oninput="mudarSub()" id="id6" type="text" placeholder="Ex: Venha fazer parte dessa festa!"/>
+            <input style="width:30px;"oninput="mudarCorSub()" type="color" id="corsub"/><br><br>
+            
+            
+            <label>Digite campo 3: </label>
+            <input oninput="mudarData()" id="id1" type="text" placeholder="Ex: 25/07/2018"/>
+            <input style="width:30px;"oninput="mudarCorData()" type="color" id="cordata"/><br><br>
+           
+            
+            <label>Digite campo 4: </label>
+            <input oninput="mudarHora()" id="id2" type="text" placeholder="Ex: 16hrs"/>
+            <input style="width:30px;"oninput="mudarCorHora()" type="color" id="corhora"/><br><br>
+            
+            
+            <label>Digite campo 5: </label>
+            <input oninput="mudarTelefone()"id="id3" type="text" placeholder="Ex: (13) 3466-5522"/>
+            <input style="width:30px;"oninput="mudarCorTelefone()" type="color" id="cortelefone"/><br><br>
+            
+            
+            <label>Digite campo 6: </label>
+            <input oninput="mudarLocal()" id="id4" type="text" placeholder="Ex: Prefeitura de SV"/>
+            <input style="width:30px;"oninput="mudarCorLocal()" type="color" id="corlocal"/><br><br>
+            
+            <label>Digite campo 7: </label>
+            <input oninput="mudarOpcional()" id="id7" type="text" placeholder="Ex: Com presença da banda Iron Maiden e sorteio de brindes"/>
+            <input style="width:30px;"oninput="mudarCorOpcional()" type="color" id="coropcional"/>
+            
+    </div>  
+    
     <section id="sec">
         <div id="area">
 
             <div id="back1">
-                <h1 id="titulo">EVENTO DE ULTIMA HORA - AGORA VAI</h1>
+                <h1 id="titulo">Título</h1>
             </div>
 
             <div class="margin"></div>
 
             <div id="back2">
-                <h3 id="subtitulo">Faça uma campanha dar certo mesmo de última hora</h3>
+                <h3 id="subtitulo">Subtitulo</h3>
             </div>
 
             <div class="margin"></div>
-
-            <p id="data">Data: 01-01-0101</p>
-            <p id="hora">Horário: Apenas venha</p>
-            <p id="tel">Telefone: (xx) xxxxx-xxxx</p>
-            <p id="local">Local: Av. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, numero 123123, sala 123. Levar uma orelha de cabra</p>
-            <p id="txtgeral">Texto Geral Opcional - Vai que precisa de alguma coisa a mais do que isso.</p>
-
             
+            <p id="data"></p>
+            <p id="hora"></p>
+            <p id="telefone"></p>
+            <p id="local"></p>
+            <p id="txtgeral"></p>
+            <p id="apoio">Realização e apoio:</p>
+            <div id="imgapoio">
+            <ul>
+            
+            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosedect.jpg" alt="Logo SEDECT" style="width:50px;margin:60px 0px 25px 0px;"></li>
+            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logopref.png" alt="Logo Prefeitura" style="width:95px;margin:60px 0px 25px 0px;"></li>
+            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logoseduc.png" alt="Logo SEDUC" style="width:50px;margin:60px 0px 25px 7px;"></li>
+            </ul>
+            </div>        
         </div>
+        
     </section>
 
 </body>
+<script>
+        function mudarImg1(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg1.jpg")';
+        }
 
+        function mudarImg2(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg2.png")';
+        }        
+        
+        function mudarImg3(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg3.jpg")';
+        }
+
+        function mudarImg4(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg4.png")';
+        }
+        function mudarImg5(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg5.png")';
+        }
+        function mudarImg6(){
+             var sec = document.getElementsByTagName('section')[0];
+             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg6.png")';
+        }
+
+        $(".botaopref").click(function(){
+            $("li[esconder]").show();
+        });
+        $(".botaoseduc").click(function(){
+            $("li[esconder]").show();
+        });
+
+        function mudarTitulo(){
+             var valor = document.getElementById("id5").value;
+             var p5 = document.getElementById("titulo");
+             p5.innerHTML = valor;
+        }
+       function mudarCorTitulo(){
+             var valor = document.getElementById("cortitulo").value;
+             var p5 = document.getElementById("titulo");
+             p5.style.color = valor;
+        }
+        
+        
+        
+        function mudarSub(){
+             var valor = document.getElementById("id6").value;
+             var p6 = document.getElementById("subtitulo");
+             p6.innerHTML = valor;
+        }
+        function mudarCorSub(){
+             var valor = document.getElementById("corsub").value;
+             var p6 = document.getElementById("subtitulo");
+             p6.style.color = valor;
+        }
+        
+        
+        
+        function mudarData(){
+             var valor = document.getElementById("id1").value;
+             var p1 = document.getElementById("data");
+             p1.innerHTML = valor;
+        }
+        function mudarCorData(){
+             var valor = document.getElementById("cordata").value;
+             var p6 = document.getElementById("data");
+             p6.style.color = valor;
+        }
+        
+        
+        
+        function mudarHora(){
+             var valor = document.getElementById("id2").value;
+             var p2 = document.getElementById("hora");
+             p2.innerHTML = valor;
+        }
+        function mudarCorHora(){
+             var valor = document.getElementById("corhora").value;
+             var p6 = document.getElementById("hora");
+             p6.style.color = valor;
+        }
+        
+        function mudarTelefone(){
+             var valor = document.getElementById("id3").value;
+             var p3 = document.getElementById("telefone");
+             p3.innerHTML = valor;
+        }
+        function mudarCorTelefone(){
+             var valor = document.getElementById("cortelefone").value;
+             var p6 = document.getElementById("telefone");
+             p6.style.color = valor;
+        }
+        
+        
+        function mudarLocal(){
+             var valor = document.getElementById("id4").value;
+             var p4 = document.getElementById("local");
+             p4.innerHTML = valor;
+        }
+        function mudarCorLocal(){
+             var valor = document.getElementById("corlocal").value;
+             var p6 = document.getElementById("local");
+             p6.style.color = valor;
+        }
+
+        function mudarOpcional(){
+             var valor = document.getElementById("id7").value;
+             var p4 = document.getElementById("txtgeral");
+             p4.innerHTML = valor;
+        }
+        function mudarCorOpcional(){
+             var valor = document.getElementById("coropcional").value;
+             var p6 = document.getElementById("txtgeral");
+             p6.style.color = valor;
+        }
+        
+        
+        
+        function mudarCorFundoTitulo(){
+             var valor = document.getElementById("corfundotitulo").value;
+             var p9 = document.getElementById("titulo");
+             p9.style.background = valor;
+        }
+        function mudarCorFundoSubTitulo(){
+             var valor = document.getElementById("corfundosubtitulo").value;
+             var p10 = document.getElementById("subtitulo");
+             p10.style.background = valor;
+        }
+        function mudarCorApoio(){
+             var valor = document.getElementById("corapoio").value;
+             var p6 = document.getElementById("apoio");
+             p6.style.color = valor;
+        }
+</script>
 </html>
