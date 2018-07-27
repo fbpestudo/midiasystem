@@ -119,10 +119,24 @@ input{
     margin-bottom: 5px;
 }
 
+select{
+    margin-bottom: 20px;
+    width: 100px;
+}
+
 #face{
     width: 60px;
     height: 60px;
     background-color: darkgreen;
+}
+
+.time{
+    /* FONT-SIZE: 9pt;FONT-FAMILY: Verdana, Helvetica, sans-serif;COLOR: #000; */
+    FONT-SIZE: 28pt; FONT-FAMILY: Time; COLOR: rgb(236, 22, 22); 
+} 
+
+.georgia{
+    FONT-SIZE: 28pt; FONT-FAMILY: Georgia; COLOR: rgb(22, 236, 104); 
 }
 
 /* #faixa{

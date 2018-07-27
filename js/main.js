@@ -37,3 +37,14 @@ function mudarOpc(){
     var p7= document.getElementById("txtopc");
     p7.innerHTML =valor;
 }
+
+function mudarTipo(){
+    // var valor= document.getElementById("tipo").value;
+    var elemento = $('#subtitulo');
+    // if (elemento.hasClass('sans-serif')){
+    //     elemento.removeClass('sans-serif');
+    // } else {
+    //     elemento.addClass('Time');
+    // }
+   elemento.addClass('georgia');
+}
