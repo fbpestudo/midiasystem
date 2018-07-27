@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="stylesheets/sectionartevisual.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <script src="https://midiapost-lfvasconcellos.c9users.io/js/jquery.js"></script>
+    <script src="https://midiapost-lfvasconcellos.c9users.io/js/funcoes.js"></script>
 </head>
 
 <body>
@@ -32,11 +32,19 @@
         </ul>
     </div>
     <div id="controles">
-           <input type="button" class="botao" value="Carregar logos realização e apoio"/><br><br>
+            <input type="button" class="botaopref" value="Carregar logo Prefeitura"/>
+            <input type="button" class="botaoseduc" value="Carregar logo SEDUC"/>
+            <input type="button" class="botaosedect" value="Carregar logo SEDECT"/>
+            <input type="button" class="botaosecesporte" value="Carregar logo SESPOR"/><br>
+            <input type="button" class="botaosecassist" value="Carregar logo SEAS"/>
+            <input type="button" class="botaosecobras" value="Carregar logo SEC OBRAS"/>
+            <input type="button" class="botaosecsaude" value="Carregar logo SESASV"/>
+            <input type="button" class="botaosehab" value="Carregar logo SEHAB"/><br>
+            <input type="button" class="botaosetur" value="Carregar logo SETUR"/><br><br>
             
-            <label>Cor fundo título: </label>
+            <label>Cor fundo do título: </label>
             <input style="width:30px;"oninput="mudarCorFundoTitulo()" type="color" id="corfundotitulo"/><br>
-            <label>Cor fundo subtitulo: </label>
+            <label>Cor fundo do subtitulo: </label>
             <input style="width:30px;"oninput="mudarCorFundoSubTitulo()" type="color" id="corfundosubtitulo"/><br>
             <label>Cor realização e apoio: </label>
             <input style="width:30px;"oninput="mudarCorApoio()" type="color" id="corapoio"/><br><br>
@@ -70,7 +78,7 @@
             <input style="width:30px;"oninput="mudarCorLocal()" type="color" id="corlocal"/><br><br>
             
             <label>Digite campo 7: </label>
-            <input oninput="mudarOpcional()" id="id7" type="text" placeholder="Ex: Com presença da banda Iron Maiden e sorteio de brindes"/>
+            <input oninput="mudarOpcional()" id="id7" type="text" placeholder="Ex: Com presença da banda Iron Maiden"/>
             <input style="width:30px;"oninput="mudarCorOpcional()" type="color" id="coropcional"/>
             
     </div>  
@@ -91,160 +99,57 @@
             <div class="margin"></div>
             
             <p id="data"></p>
-            <p id="hora"></p>
-            <p id="telefone"></p>
-            <p id="local"></p>
-            <p id="txtgeral"></p>
-            <p id="apoio">Realização e apoio:</p>
+            <p id="hora"> </p>
+            <p id="telefone"> </p>
+            <p id="local"> </p>
+            <p id="txtgeral"> </p>
+            <div id="back3">
             <div id="imgapoio">
+            <p id="apoio">Realização e apoio:</p>
             <ul>
-            
-            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosedect.jpg" alt="Logo SEDECT" style="width:50px;margin:60px 0px 25px 0px;"></li>
-            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logopref.png" alt="Logo Prefeitura" style="width:95px;margin:60px 0px 25px 0px;"></li>
-            <li esconder><img src="https://midiapost-lfvasconcellos.c9users.io/images/logoseduc.png" alt="Logo SEDUC" style="width:50px;margin:60px 0px 25px 7px;"></li>
+            <li escondersedect><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosedect.jpg" alt="Logo SEDECT" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li esconderseduc><img src="https://midiapost-lfvasconcellos.c9users.io/images/logoseduc.png" alt="Logo SEDUC" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li escondersehab><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosehab.jpg" alt="Logo SEHAB" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li escondersetur><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosetur.jpg" alt="Logo SETUR" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li esconderpref><img src="https://midiapost-lfvasconcellos.c9users.io/images/logoprefeitura.png" alt="Logo Prefeitura" style="width:60px;margin:60px -2px 25px -2px;"></li>
+            <li escondersecobras><img src="https://midiapost-lfvasconcellos.c9users.io/images/secobras.png" alt="Logo SECOBRAS" style="width:51px;margin:60px 0px 25px 1px;"></li>
+            <li escondersecsaude><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosecsaude.jpg" alt="Logo SECSAUDE" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li escondersecassist><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosecassist.jpg" alt="Logo SEAS" style="width:50px;margin:60px 0px 25px 2px;"></li>
+            <li escondersecesporte><img src="https://midiapost-lfvasconcellos.c9users.io/images/logosecesporte.jpg" alt="Logo SESPOR" style="width:51px;margin:60px 0px 25px 2px;"></li>
             </ul>
-            </div>        
+            </div> 
+            </div>
         </div>
-        
     </section>
 
 </body>
 <script>
-        function mudarImg1(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg1.jpg")';
-        }
-
-        function mudarImg2(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg2.png")';
-        }        
-        
-        function mudarImg3(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg3.jpg")';
-        }
-
-        function mudarImg4(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg4.png")';
-        }
-        function mudarImg5(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg5.png")';
-        }
-        function mudarImg6(){
-             var sec = document.getElementsByTagName('section')[0];
-             sec.style.backgroundImage = 'url("https://midiapost-lfvasconcellos.c9users.io/images/bg6.png")';
-        }
-
         $(".botaopref").click(function(){
-            $("li[esconder]").show();
+            $("li[esconderpref]").show();
         });
         $(".botaoseduc").click(function(){
-            $("li[esconder]").show();
+            $("li[esconderseduc]").show();
         });
-
-        function mudarTitulo(){
-             var valor = document.getElementById("id5").value;
-             var p5 = document.getElementById("titulo");
-             p5.innerHTML = valor;
-        }
-       function mudarCorTitulo(){
-             var valor = document.getElementById("cortitulo").value;
-             var p5 = document.getElementById("titulo");
-             p5.style.color = valor;
-        }
-        
-        
-        
-        function mudarSub(){
-             var valor = document.getElementById("id6").value;
-             var p6 = document.getElementById("subtitulo");
-             p6.innerHTML = valor;
-        }
-        function mudarCorSub(){
-             var valor = document.getElementById("corsub").value;
-             var p6 = document.getElementById("subtitulo");
-             p6.style.color = valor;
-        }
-        
-        
-        
-        function mudarData(){
-             var valor = document.getElementById("id1").value;
-             var p1 = document.getElementById("data");
-             p1.innerHTML = valor;
-        }
-        function mudarCorData(){
-             var valor = document.getElementById("cordata").value;
-             var p6 = document.getElementById("data");
-             p6.style.color = valor;
-        }
-        
-        
-        
-        function mudarHora(){
-             var valor = document.getElementById("id2").value;
-             var p2 = document.getElementById("hora");
-             p2.innerHTML = valor;
-        }
-        function mudarCorHora(){
-             var valor = document.getElementById("corhora").value;
-             var p6 = document.getElementById("hora");
-             p6.style.color = valor;
-        }
-        
-        function mudarTelefone(){
-             var valor = document.getElementById("id3").value;
-             var p3 = document.getElementById("telefone");
-             p3.innerHTML = valor;
-        }
-        function mudarCorTelefone(){
-             var valor = document.getElementById("cortelefone").value;
-             var p6 = document.getElementById("telefone");
-             p6.style.color = valor;
-        }
-        
-        
-        function mudarLocal(){
-             var valor = document.getElementById("id4").value;
-             var p4 = document.getElementById("local");
-             p4.innerHTML = valor;
-        }
-        function mudarCorLocal(){
-             var valor = document.getElementById("corlocal").value;
-             var p6 = document.getElementById("local");
-             p6.style.color = valor;
-        }
-
-        function mudarOpcional(){
-             var valor = document.getElementById("id7").value;
-             var p4 = document.getElementById("txtgeral");
-             p4.innerHTML = valor;
-        }
-        function mudarCorOpcional(){
-             var valor = document.getElementById("coropcional").value;
-             var p6 = document.getElementById("txtgeral");
-             p6.style.color = valor;
-        }
-        
-        
-        
-        function mudarCorFundoTitulo(){
-             var valor = document.getElementById("corfundotitulo").value;
-             var p9 = document.getElementById("titulo");
-             p9.style.background = valor;
-        }
-        function mudarCorFundoSubTitulo(){
-             var valor = document.getElementById("corfundosubtitulo").value;
-             var p10 = document.getElementById("subtitulo");
-             p10.style.background = valor;
-        }
-        function mudarCorApoio(){
-             var valor = document.getElementById("corapoio").value;
-             var p6 = document.getElementById("apoio");
-             p6.style.color = valor;
-        }
+        $(".botaosedect").click(function(){
+            $("li[escondersedect]").show();
+        });
+        $(".botaosecesporte").click(function(){
+            $("li[escondersecesporte]").show();
+        });
+        $(".botaosecassist").click(function(){
+            $("li[escondersecassist]").show();
+        });
+        $(".botaosecobras").click(function(){
+            $("li[escondersecobras]").show();
+        });
+        $(".botaosecsaude").click(function(){
+            $("li[escondersecsaude]").show();
+        });
+        $(".botaosehab").click(function(){
+            $("li[escondersehab]").show();
+        });
+        $(".botaosetur").click(function(){
+            $("li[escondersetur]").show();
+        });
 </script>
 </html>
