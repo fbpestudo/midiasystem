@@ -1,44 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8" />
+    <!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Section Mídia Visual</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="stylesheets/sectionartevisual.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-        crossorigin="anonymous">
-
+    <meta charset="utf-8">
+    <title>Section Midia Visual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-    <section id="sec">
-        <div id="area">
-
-            <div id="back1">
-                <h1 id="titulo">EVENTO DE ULTIMA HORA - AGORA VAI</h1>
-            </div>
-
-            <div class="margin"></div>
-
-            <div id="back2">
-                <h3 id="subtitulo">Faça uma campanha dar certo mesmo de última hora</h3>
-            </div>
-
-            <div class="margin"></div>
-
-            <p id="data">Data: 01-01-0101</p>
-            <p id="hora">Horário: Apenas venha</p>
-            <p id="tel">Telefone: (xx) xxxxx-xxxx</p>
-            <p id="local">Local: Av. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, numero 123123, sala 123. Levar uma orelha de cabra</p>
-            <p id="txtgeral">Texto Geral Opcional - Vai que precisa de alguma coisa a mais do que isso.</p>
-
-            
+    <header class="container">
+        <h1>Section Midia Visual</h1>
         </div>
-    </section>
+    </header>
+    <main class="container-fluid">
+        <section class="row">
+            <div class="col-3">
+                <p>
+                    <em>CAIXA DE FERRAMENTAS</em>
+                </p>
+                <div class="accordion" id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Digitar os textos:
+                                </button>
+                            </h5>
+                        </div>
 
+                        <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion"> -->
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+
+                                <form>
+                                    <fieldset>
+                                        <legend>Selecione para editar</legend>
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarSub()" id="id6" type="text" placeholder="Ex: Venha fazer parte dessa festa!" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarData()" id="id1" type="text" placeholder="Ex: 25/07/2018" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarHora()" id="id2" type="text" placeholder="Ex: 16hrs" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarTelefone()" id="id3" type="text" placeholder="Ex: (13) 3466-5522" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarLocal()" id="id4" type="text" placeholder="Ex: Prefeitura de SV" />
+                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input oninput="mudarOpc()" id="id7" type="text" placeholder="Texto extra" />
+                                        <input type="reset" value="LIMPAR">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Cor e Posição:
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <fieldset>
+                                    <legend>Letra:</legend>
+                                    <p>
+                                        <input type="color"> Cor do Texto</p>
+                                    <p>
+                                        <input style="width: 50px" type="number" min="8" max="30" value="16" size="4" name="" id=""> Tamanho da Letra</p>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Posição:</legend>
+                                    <p>
+                                        <a href="#">
+                                            <span>&Uparrow; </span>Para Cima</a>
+                                    </p>
+                                    <p>
+                                        <a href="#">
+                                            <span>&Downarrow; </span>Para Baixo</a>
+                                    </p>
+                                    <p>
+                                        <a href="#">
+                                            <span>&Leftarrow; </span>Para Esquerda</a>
+                                    </p>
+                                    <p>
+                                        <a href="#">
+                                            <span>&Rightarrow; </span>Para Direita</a>
+                                    </p>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Formas e Tamanhos:
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                FERRAMENTAS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+
+                <section id="sec">
+                    <div id="area">
+
+                        <div id="back1">
+                            <h1 id="titulo"></h1>
+                        </div>
+
+                        <div class="margin"></div>
+
+                        <div id="back2">
+                            <h3 id="subtitulo"></h3>
+                        </div>
+
+                        <div class="margin"></div>
+
+                        <p id="data"></p>
+                        <p id="hora"></p>
+                        <p id="tel"></p>
+                        <p id="local"></p>
+                        <p id="txtopc"></p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="container">
+        <p>&copy;2018 - Prefeitura Municipal de São Vicente</p>
+    </footer>
 </body>
 
 </html>
