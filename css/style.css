@@ -1,7 +1,21 @@
-*{
+/*
+*, *:before, *:after{
     margin: 0;
     padding: 0;
-}
+    outline: 0;
+
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    line-height: 1.2;
+    letter-spacing: 0em;
+    vertical-align: middle;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+} */
 
 main{
     border: 1px solid #ccc;
@@ -116,7 +130,7 @@ input[type=text]{
 }
 
 input{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 select{
