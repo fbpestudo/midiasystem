@@ -45,20 +45,21 @@
                                 <form>
                                     <fieldset>
                                         <legend>Selecione para editar</legend>
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="titulo" > Título
                                         <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="subtitulo"> Subtítulo
                                         <input oninput="mudarSub()" id="id6" type="text" placeholder="Ex: Venha fazer parte dessa festa!" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="data"> Data
                                         <input oninput="mudarData()" id="id1" type="text" placeholder="Ex: 25/07/2018" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="hora"> Hora
                                         <input oninput="mudarHora()" id="id2" type="text" placeholder="Ex: 16hrs" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="tel"> Telefone
                                         <input oninput="mudarTelefone()" id="id3" type="text" placeholder="Ex: (13) 3466-5522" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="local"> Local
                                         <input oninput="mudarLocal()" id="id4" type="text" placeholder="Ex: Prefeitura de SV" />
-                                        <input type="checkbox" name="vehicle2" value="Car">
+                                        <input type="checkbox" name="item" value="txtopc"> Texto Extra
                                         <input oninput="mudarOpc()" id="id7" type="text" placeholder="Texto extra" />
+                                        <br><input type="button" value="Faz Alterações..." onclick="verificaCampos()">
                                         <input type="reset" value="LIMPAR">
                                     </fieldset>
                                 </form>
@@ -79,7 +80,8 @@
                                 <fieldset>
                                     <legend>Letra:</legend>
 
-                                    <select name="tipo" id= "tipo" oninput="mudarTipo()">
+                                    <!-- <select name="tipo" id= "tipo" oninput="mudarTipo()"> -->
+                                        <select name="tipo" id= "tipo">
                                         <option value="Arial">Arial</option>
                                         <option value="Times">Times</option>
                                         <option value="Helvetica">Helvetica</option>
@@ -88,10 +90,13 @@
                                       <label for=tipo>Tipo da Letra</label>
 
                                     <p>
-                                        <input type="color"> Cor do Texto</p>
+                                        <!-- <input type="color" name="cor" id= "cor" oninput="mudarCor()"> Cor do Texto</p> -->
+                                        <input type="color" name="cor" id= "cor"> Cor do Texto</p>
                                     <p>
-                                        <input style="width: 50px" type="number" min="8" max="30" value="16" size="4" name="" id=""> Tamanho da Letra</p>
-                                </fieldset>
+                                        <!-- <input style="width: 50px" type="number" min="8" max="40" value="16" size="4" name="tamanho" id="tamanho" oninput="mudarTamanho()"> Tamanho da Letra</p> -->
+                                        <input style="width: 50px" type="number" min="8" max="40" value="16" size="4" name="tamanho" id="tamanho"> Tamanho da Letra</p>
+                                        <input type="button" value="Faz Alterações..." onclick="verificaCampos()">
+                                    </fieldset>
                                 <fieldset>
                                     <legend>Posição:</legend>
                                     <p>

@@ -14,8 +14,8 @@ fieldset{
 }
 
 #sec {
-    /* font-family: Cambria, Roboto, Raleway; */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
     display: block;
     /*margin: 50px;*/
     height: 600px;
@@ -130,13 +130,13 @@ select{
     background-color: darkgreen;
 }
 
-.time{
+.arial{
     /* FONT-SIZE: 9pt;FONT-FAMILY: Verdana, Helvetica, sans-serif;COLOR: #000; */
-    FONT-SIZE: 28pt; FONT-FAMILY: Time; COLOR: rgb(236, 22, 22); 
+    FONT-SIZE: 28pt; FONT-FAMILY: Arial; COLOR: rgb(236, 22, 22); 
 } 
 
 .georgia{
-    FONT-SIZE: 28pt; FONT-FAMILY: Georgia; COLOR: rgb(22, 236, 104); 
+    FONT-SIZE: 28pt; FONT-FAMILY: Georgia; COLOR: rgb(22, 43, 236); 
 }
 
 /* #faixa{

@@ -38,13 +38,65 @@ function mudarOpc(){
     p7.innerHTML =valor;
 }
 
-function mudarTipo(){
-    // var valor= document.getElementById("tipo").value;
-    var elemento = $('#subtitulo');
-    // if (elemento.hasClass('sans-serif')){
-    //     elemento.removeClass('sans-serif');
-    // } else {
-    //     elemento.addClass('Time');
-    // }
-   elemento.addClass('georgia');
+function mudarTipo(x){
+    var valor= document.getElementById("tipo").value;
+    var c = document.getElementById(x);
+   switch (valor){
+       case "Arial":
+    //    c.style.color = valor;
+       c.style.fontFamily = "Arial,sans-serif";
+    //    $("#subtitulo").css("font-family", "Arial,sans-serif");
+       break;
+       case "Helvetica":
+       $("#subtitulo").css("font-family", "Helvetica");
+       break;
+       case "Times":
+    //    $("#subtitulo").css("font-family", "Times, serif");
+       c.style.fontFamily = "Times, serif";
+       break;
+       case "Georgia":
+       $("#subtitulo").css("font-family", "Georgia");
+       break;
+   }
 }
+
+function mudarCor(x){
+
+    var valor= document.getElementById("cor").value;
+// var c2 = document.getElementById("subtitulo");
+var c = document.getElementById(x);
+c.style.color = valor;
+}
+
+function mudarTamanho(x){
+    var valor= document.getElementById("tamanho").value;
+    valor = parseInt(valor) +"px";
+    var c = document.getElementById(x);
+    c.style.fontSize = valor;
+    // $("#subtitulo").css("font-size", valor); 
+}
+
+function verificaCampos() {
+
+var aChk = document.getElementsByName("item"); 
+
+for (var i=0;i<aChk.length;i++){ 
+
+    if (aChk[i].checked == true){ 
+
+        var item = aChk[i].value;
+        mudarTipo(item);
+        mudarCor(item);
+        mudarTamanho(item);
+
+
+        // alert(aChk[i].value + " marcado.");
+
+        // CheckBox Não Marcado... Faça alguma outra coisa...
+
+    }
+
+}
+
+}
+    
