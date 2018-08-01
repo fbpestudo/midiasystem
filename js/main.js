@@ -43,15 +43,12 @@ function mudarTipo(x) {
     var c = document.getElementById(x);
     switch (valor) {
         case "Arial":
-            //    c.style.color = valor;
             c.style.fontFamily = "Arial,sans-serif";
-            //    $("#subtitulo").css("font-family", "Arial,sans-serif");
             break;
         case "Helvetica":
             $("#subtitulo").css("font-family", "Helvetica");
             break;
         case "Times":
-            //    $("#subtitulo").css("font-family", "Times, serif");
             c.style.fontFamily = "Times, serif";
             break;
         case "Georgia":
@@ -61,7 +58,6 @@ function mudarTipo(x) {
 }
 
 function mudarCor(x) {
-
     var valor = document.getElementById("cor").value;
     var c = document.getElementById(x);
     c.style.color = valor;
@@ -75,13 +71,9 @@ function mudarTamanho(x) {
 }
 
 function verificaCampos() {
-
     var aChk = document.getElementsByName("item");
-
     for (var i = 0; i < aChk.length; i++) {
-
         if (aChk[i].checked == true) {
-
             var item = aChk[i].value;
             mudarTipo(item);
             mudarCor(item);
@@ -91,19 +83,9 @@ function verificaCampos() {
 }
 
 function escolheMidia() {
-    
-    // mi1.style.display = "none";
-    // var mi2 = document.getElementById("mid2");
-    // mi2.style.display = "none";
-    // var mi3 = document.getElementById("mid3");
-    // mi3.style.display = "none";
-
     var aChk = document.getElementsByName("item");
-
     for (var i = 0; i < aChk.length; i++) {
-
         if (aChk[i].checked == true) {
-
             var item = aChk[i].value;
             if (item == "midia1") {   
                 var mi = document.getElementById("sec");  
@@ -112,10 +94,8 @@ function escolheMidia() {
                 mi.style.backgroundImage = "url('img/draw.png')";
                 mi.style.backgroundSize = "600px 600px";
                 mi.style.backgroundRepeat = "no-repeat";
-
             }
-            if (item == "midia2") {
-             
+            if (item == "midia2") {             
                 var mi = document.getElementById("sec");  
                 mi.style.width = "800px";
                 mi.style.height = "280px;"       
