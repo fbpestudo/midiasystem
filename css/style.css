@@ -30,24 +30,26 @@ fieldset{
 #sec {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
-    display: block;
+      display: block;
     /*margin: 50px;*/
-    height: 600px;
-    width: 600px;
-    background-image: url("../img/draw.png");
-    background-size: 600px, 600px;    
+    /* height: 600px;
+    width: 600px; */
+    /* background-image: url("../img/draw.png"); */
+    /* background-size: 600px, 600px;     */
 }
 
 #area {
     height: 600px;
     padding-top: 35px;
-    padding-bottom: 50px;    
+    padding-bottom: 50px; 
+     
 }
 
 #back1 {
     width: 600px;
     height: 58px;
     background-color: rgba(117, 215, 242, 0.85);
+ 
 }
 
 #titulo {
@@ -78,7 +80,8 @@ fieldset{
     text-align: center;
     width: 600px;
     height: 58px;
-    background-color: rgba(232, 228, 132, 0.85);       
+    background-color: rgba(232, 228, 132, 0.85); 
+        
 }
 
 #data{
@@ -144,14 +147,14 @@ select{
     background-color: darkgreen;
 }
 
-.arial{
-    /* FONT-SIZE: 9pt;FONT-FAMILY: Verdana, Helvetica, sans-serif;COLOR: #000; */
+/* .arial{
+    /* FONT-SIZE: 9pt;FONT-FAMILY: Verdana, Helvetica, sans-serif;COLOR: #000; 
     FONT-SIZE: 28pt; FONT-FAMILY: Arial; COLOR: rgb(236, 22, 22); 
 } 
 
 .georgia{
     FONT-SIZE: 28pt; FONT-FAMILY: Georgia; COLOR: rgb(22, 43, 236); 
-}
+} */
 
 /* #faixa{
     width: 60px;

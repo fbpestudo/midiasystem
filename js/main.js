@@ -91,8 +91,12 @@ function verificaCampos() {
 }
 
 function escolheMidia() {
-    // var mi = document.getElementByName("sec");
-    // mi.style.display = "none";
+    
+    // mi1.style.display = "none";
+    // var mi2 = document.getElementById("mid2");
+    // mi2.style.display = "none";
+    // var mi3 = document.getElementById("mid3");
+    // mi3.style.display = "none";
 
     var aChk = document.getElementsByName("item");
 
@@ -101,22 +105,36 @@ function escolheMidia() {
         if (aChk[i].checked == true) {
 
             var item = aChk[i].value;
-            if (item == "midia1") {
-                // var mi = document.getElementById("sec");
-                // mi.style.display = "block";
-                alert("Midia1");
+            if (item == "midia1") {   
+                var mi = document.getElementById("sec");  
+                mi.style.width = "600px";
+                mi.style.height = "600px;"       
+                mi.style.backgroundImage = "url('img/draw.png')";
+                mi.style.backgroundSize = "600px 600px";
+                mi.style.backgroundRepeat = "no-repeat";
+
             }
             if (item == "midia2") {
-                alert("Midia2");
-                // var mi = document.getElementsByName("sec");
-                mi.style.display = "none";
+             
+                var mi = document.getElementById("sec");  
+                mi.style.width = "800px";
+                mi.style.height = "280px;"       
+                mi.style.backgroundImage = "url('img/draw.png')";
+                mi.style.backgroundSize = "800px 280px";
+                mi.style.backgroundRepeat = "no-repeat";
             }
             if (item == "midia3") {
-                alert("Midia3");
+                var mi = document.getElementById("sec");  
+                mi.style.width = "420px";
+                mi.style.height = "600px;"       
+                mi.style.backgroundImage = "url('img/draw.png')";
+                mi.style.backgroundSize = "420px 600px";
+                mi.style.backgroundRepeat = "no-repeat";
             }
         }
     }
 }
+
 
 
 
