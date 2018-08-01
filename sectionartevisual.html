@@ -15,6 +15,7 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
 </head>
 
 <body>
@@ -161,6 +162,30 @@
                             </div>
                         </div>
                     </div>
+<!-- -------------------------------------------------------------- -->
+
+<div class="card">
+    <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                aria-controls="collapseFour">
+                <em><b>Salvar Mídia...</b></em>                                    
+            </button>
+        </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="card-body">
+               <fieldset>
+                    <legend style= "font-size: 16px"><em><b>Exportar Mídia... ".png"</b></em></legend>                    
+                    <input id="btn-Preview-Image" type="button" value="Visualizar"/>
+                    <a id="btn-Convert-Html2Image" href="#">Download</a>                    
+                </fieldset>
+        </div>
+    </div>
+</div>
+
+<!-- ---------------------------------------------------------------- -->
+
                 </div>
             </div>
             <div class="col-9">
@@ -187,12 +212,52 @@
                         <p id="txtopc"></p>
                     </div>
                 </section>
+                <div id="previewImage">
+                </div>
             </div>
         </section>
     </main>
     <footer class="container">
         <p>&copy;2018 - Prefeitura Municipal de São Vicente</p>
     </footer>
+    <script>
+        $(document).ready(function(){
+        //   var element = $("#html-content-holder"); // global variable
+        var element = $("#sec"); // global variable
+          var getCanvas; // global variable
+         
+            $("#btn-Preview-Image").on('click', function () {
+              html2canvas(element, {
+                onrendered: function (canvas) {
+                  $("#previewImage").append(canvas);
+                  getCanvas = canvas;
+                }
+              });
+            });
+        
+            $("#btn-Convert-Html2Image").on('click', function () {
+            // var imgageData = getCanvas.toDataURL("image/png");
+            var imgageData = getCanvas.toDataURL("img/png");
+            // Now browser starts downloading it instead of just showing it
+            // var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            var newData = imgageData.replace(/^data:img\/png/, "data:application/octet-stream");
+            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+            });
+          
+          // $("#btn-Convert-Html2Image").on('click', function () {
+          //   html2canvas(element, {
+          //     onrendered: function (canvas) {
+          //       $("#previewImage").append(canvas);
+          //       getCanvas = canvas;
+          //       var imgageData = getCanvas.toDataURL("image/png");
+          //       var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+          //       $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+          //     }
+          //   });
+          // });
+        });
+        
+        </script>
 </body>
 
 </html>
