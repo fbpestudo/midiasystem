@@ -33,7 +33,7 @@
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Digitar os textos:
+                                    <em><b>Digitar os textos...</b></em>
                                 </button>
                             </h5>
                         </div>
@@ -44,22 +44,22 @@
 
                                 <form>
                                     <fieldset>
-                                        <legend>Selecione para editar</legend>
-                                        <input type="checkbox" name="item" value="titulo" > Título
+                                        <legend style= "font-size: 16px"><em><b>Marque e mude cor, tamanho...</b></em></legend>
+                                        <input type="checkbox" name="item" value="titulo" > <em>Título:</em>
                                         <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV" />
-                                        <input type="checkbox" name="item" value="subtitulo"> Subtítulo
+                                        <input type="checkbox" name="item" value="subtitulo"> <em>Subtítulo:</em>
                                         <input oninput="mudarSub()" id="id6" type="text" placeholder="Ex: Venha fazer parte dessa festa!" />
-                                        <input type="checkbox" name="item" value="data"> Data
+                                        <input type="checkbox" name="item" value="data"> <em>Data:</em>
                                         <input oninput="mudarData()" id="id1" type="text" placeholder="Ex: 25/07/2018" />
-                                        <input type="checkbox" name="item" value="hora"> Hora
+                                        <input type="checkbox" name="item" value="hora"> <em>Hora:</em>
                                         <input oninput="mudarHora()" id="id2" type="text" placeholder="Ex: 16hrs" />
-                                        <input type="checkbox" name="item" value="tel"> Telefone
+                                        <input type="checkbox" name="item" value="tel"> <em>Telefone:</em>
                                         <input oninput="mudarTelefone()" id="id3" type="text" placeholder="Ex: (13) 3466-5522" />
-                                        <input type="checkbox" name="item" value="local"> Local
+                                        <input type="checkbox" name="item" value="local"> <em>Local:</em>
                                         <input oninput="mudarLocal()" id="id4" type="text" placeholder="Ex: Prefeitura de SV" />
-                                        <input type="checkbox" name="item" value="txtopc"> Texto Extra
+                                        <input type="checkbox" name="item" value="txtopc"> <em>Texto Extra:</em>
                                         <input oninput="mudarOpc()" id="id7" type="text" placeholder="Texto extra" />
-                                        <br><input type="button" value="Faz Alterações..." onclick="verificaCampos()">
+                                        <!-- <br><input type="button" value="Faz Alterações..." onclick="verificaCampos()"> -->
                                         <input type="reset" value="LIMPAR">
                                     </fieldset>
                                 </form>
@@ -71,14 +71,14 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
-                                    Cor e Posição:
+                                    <em><b>Alterar: cor, tamanho, fonte...</b></em>
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
                                 <fieldset>
-                                    <legend>Letra:</legend>
+                                    <legend style= "font-size: 16px"><em><b>Letra...</b></em></legend>
 
                                     <!-- <select name="tipo" id= "tipo" oninput="mudarTipo()"> -->
                                         <select name="tipo" id= "tipo">
@@ -87,15 +87,15 @@
                                         <option value="Helvetica">Helvetica</option>
                                         <option value="Georgia">Georgia</option>
                                       </select>
-                                      <label for=tipo>Tipo da Letra</label>
+                                      <label for=tipo> <em>Tipo da Letra</em></label>
 
                                     <p>
                                         <!-- <input type="color" name="cor" id= "cor" oninput="mudarCor()"> Cor do Texto</p> -->
-                                        <input type="color" name="cor" id= "cor"> Cor do Texto</p>
+                                        <input type="color" name="cor" id= "cor"> <em>Cor do Texto</em></p>
                                     <p>
                                         <!-- <input style="width: 50px" type="number" min="8" max="40" value="16" size="4" name="tamanho" id="tamanho" oninput="mudarTamanho()"> Tamanho da Letra</p> -->
-                                        <input style="width: 50px" type="number" min="8" max="40" value="16" size="4" name="tamanho" id="tamanho"> Tamanho da Letra</p>
-                                        <input type="button" value="Faz Alterações..." onclick="verificaCampos()">
+                                        <input style="width: 50px" type="number" min="8" max="40" value="18" size="4" name="tamanho" id="tamanho"> <em>Tamanho da Letra</em></p>
+                                        <input type="button" value="Fazer Alterações..." onclick="verificaCampos()">
                                     </fieldset>
                                 <fieldset>
                                     <legend>Posição:</legend>
@@ -124,13 +124,40 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                     aria-controls="collapseThree">
-                                    Formas e Tamanhos:
+                                    <em><b>Tipos de midia...</b></em>                                    
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
-                                FERRAMENTAS
+                                                                  
+                                <div id= "social">
+                                    <p> Facebook - 600px X 600px</p>
+                                </div>
+                                <div id= "faixa">
+                                    <p>F A I X A - 2,00m X 0,70m</p>
+                                </div>
+                                <div id= "banner1">
+                                    <P>B A N N E R - 0,70m X 1,00m</P>
+                                  </div>
+                                  <fieldset>
+                                        <legend style= "font-size: 16px"><em><b>Mídias...</b></em></legend>
+                                        <input type="radio" name="item" value="midia1" id= "midia1" checked = "checked"> <label for = "midia1"><em>&nbsp;Facebook - 600px X 600px</em></label> 
+                                        <div id= "social">
+                                             
+                                            </div>
+                                        <input type="radio" name="item" value="midia2" id= "midia2"><label for = "midia2"> <em>&nbsp;F A I X A - 2,00m X 0,70m</em></label>
+                                        <div id= "faixa">
+                                              
+                                            </div>
+                                        <input type="radio" name="item" value="midia3" id= "midia3"><label for = "midia3"> <em>&nbsp;B A N N E R - 0,70m X 1,00m</em></label> 
+                                        <div id= "banner1">
+                                               
+                                              </div>
+                                        
+                                        <br><input type="button" value="Escolher midia..." onclick="escolheMidia()">
+                                        
+                                    </fieldset>
                             </div>
                         </div>
                     </div>
@@ -148,7 +175,7 @@
                         <div class="margin"></div>
 
                         <div id="back2">
-                            <h3 id="subtitulo"></h3>
+                            <h2 id="subtitulo"></h2>
                         </div>
 
                         <div class="margin"></div>
