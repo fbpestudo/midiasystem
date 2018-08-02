@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -8,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <title>Section Midia Visual</title>
+    <meta name= "author" content= "Equipe de desenvolvimento e estagiários da DITEC/SEDECT">
+    <meta name= "description" content= "Ferramenta de criação de mídias para eventos da PMSV">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,9 +16,8 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
+    <script src="js/html2canvas.js"></script>
 </head>
-
 <body>
     <header class="container">
         <h1>Section Midia Visual</h1>
@@ -26,78 +26,150 @@
     <main class="container-fluid">
         <section class="row">
             <div class="col-3">
+                <!-- ----------------------------------------------------------------------------------------
+                Início da caixa de ferramentas
+                1- Escolhe a mídia;
+                2- Digita os textos, marca os textos para editar suas propriedades;
+                3 - Alterar propriedades: Cor, tamanho, tipo de letra;
+                4- Converter a Mídia (div id= "sec") para arquivo ".png", fazer Download do "arquivo.png".
+                ----------------------------------------------------------------------------------------- -->
                 <p>
                     <em>CAIXA DE FERRAMENTAS</em>
                 </p>
                 <div class="accordion" id="accordion">
                     <div class="card">
-                        <div class="card-header" id="headingOne">
+                        <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <em><b>Digitar os textos...</b></em>
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    <em>
+                                        <b>Tipos de midia...</b>
+                                    </em>
                                 </button>
                             </h5>
                         </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <fieldset>
+                                    <legend style="font-size: 16px">
+                                        <em>
+                                            <b>Mídias...</b>
+                                        </em>
+                                    </legend>
+                                    <input type="radio" name="item" value="midia1" id="midia1" checked="checked">
+                                    <label for="midia1">
+                                        <em>&nbsp;Facebook - 600px X 600px</em>
+                                    </label>
+                                    <div id="social">
 
-                        <!-- <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion"> -->
+                                    </div>
+                                    <input type="radio" name="item" value="midia2" id="midia2">
+                                    <label for="midia2">
+                                        <em>&nbsp;F A I X A - 2,00m X 0,70m</em>
+                                    </label>
+                                    <div id="faixa">
+
+                                    </div>
+                                    <input type="radio" name="item" value="midia3" id="midia3">
+                                    <label for="midia3">
+                                        <em>&nbsp;B A N N E R - 0,70m X 1,00m</em>
+                                    </label>
+                                    <div id="banner1">
+
+                                    </div>
+
+                                    <br>
+                                    <input type="button" value="Escolher midia..." onclick="escolheMidia()">
+
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <em>
+                                        <b>Digitar os textos...</b>
+                                    </em>
+                                </button>
+                            </h5>
+                        </div>                        
                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
-
                                 <form>
                                     <fieldset>
-                                        <legend style= "font-size: 16px"><em><b>Marque e mude cor, tamanho...</b></em></legend>
-                                        <input type="checkbox" name="item" value="titulo" > <em>Título:</em>
-                                        <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV" />
-                                        <input type="checkbox" name="item" value="subtitulo"> <em>Subtítulo:</em>
+                                        <legend style="font-size: 16px">
+                                            <em>
+                                                <b>Marque e mude cor, tamanho...</b>
+                                            </em>
+                                        </legend>
+                                        <input type="checkbox" name="item" value="titulo">
+                                        <em>&nbsp;Título:</em><br>
+                                        <input oninput="mudarTitulo()" id="id5" type="text" placeholder="Ex: Festa Junina da APAE SV" />            <input type="checkbox" name="item" value="subtitulo">
+                                        <em>&nbsp;Subtítulo:</em><br>
                                         <input oninput="mudarSub()" id="id6" type="text" placeholder="Ex: Venha fazer parte dessa festa!" />
-                                        <input type="checkbox" name="item" value="data"> <em>Data:</em>
-                                        <input oninput="mudarData()" id="id1" type="text" placeholder="Ex: 25/07/2018" />
-                                        <input type="checkbox" name="item" value="hora"> <em>Hora:</em>
-                                        <input oninput="mudarHora()" id="id2" type="text" placeholder="Ex: 16hrs" />
-                                        <input type="checkbox" name="item" value="tel"> <em>Telefone:</em>
+                                        <input type="checkbox" name="item" value="data">
+                                        <em>&nbsp;Data:</em><br>
+                                        <input oninput="mudarData()" id="id1" type="date" placeholder="Ex: 25/07/2018" /><br>
+                                        <input type="checkbox" name="item" value="hora">
+                                        <em>&nbsp;Hora:</em><br>
+                                        <input oninput="mudarHora()" id="id2" type="time" placeholder="Ex: 16hrs" /><br>
+                                        <input type="checkbox" name="item" value="tel">
+                                        <em>&nbsp;Telefone:</em><br>
                                         <input oninput="mudarTelefone()" id="id3" type="text" placeholder="Ex: (13) 3466-5522" />
-                                        <input type="checkbox" name="item" value="local"> <em>Local:</em>
+                                        <input type="checkbox" name="item" value="local">
+                                        <em>&nbsp;Local:</em><br>
                                         <input oninput="mudarLocal()" id="id4" type="text" placeholder="Ex: Prefeitura de SV" />
-                                        <input type="checkbox" name="item" value="txtopc"> <em>Texto Extra:</em>
+                                        <input type="checkbox" name="item" value="txtopc">
+                                        <em>&nbsp;Texto Extra:</em><br>
                                         <input oninput="mudarOpc()" id="id7" type="text" placeholder="Texto extra" />
-                                        <!-- <br><input type="button" value="Faz Alterações..." onclick="verificaCampos()"> -->
                                         <input type="reset" value="LIMPAR">
                                     </fieldset>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
-                                    <em><b>Alterar: cor, tamanho, fonte...</b></em>
+                                    <em>
+                                        <b>Alterar: cor, tamanho, fonte...</b>
+                                    </em>
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
                                 <fieldset>
-                                    <legend style= "font-size: 16px"><em><b>Letra...</b></em></legend>
-
-                                    <!-- <select name="tipo" id= "tipo" oninput="mudarTipo()"> -->
-                                        <select name="tipo" id= "tipo">
+                                    <legend style="font-size: 16px">
+                                        <em>
+                                            <b>Letra...</b>
+                                        </em>
+                                    </legend>
+                                    <select name="tipo" id="tipo">
                                         <option value="Arial">Arial</option>
                                         <option value="Times">Times</option>
                                         <option value="Helvetica">Helvetica</option>
                                         <option value="Georgia">Georgia</option>
-                                      </select>
-                                      <label for=tipo> <em>Tipo da Letra</em></label>
-
+                                    </select>
+                                    <label for=tipo>
+                                        <em>Tipo da Letra</em>
+                                    </label>
                                     <p>
-                                        <!-- <input type="color" name="cor" id= "cor" oninput="mudarCor()"> Cor do Texto</p> -->
-                                        <input type="color" name="cor" id= "cor"> <em>Cor do Texto</em></p>
+                                        <input type="color" name="cor" id="cor">
+                                        <em>Cor do Texto</em>
+                                    </p>
                                     <p>
-                                        <!-- <input style="width: 50px" type="number" min="8" max="40" value="16" size="4" name="tamanho" id="tamanho" oninput="mudarTamanho()"> Tamanho da Letra</p> -->
-                                        <input style="width: 50px" type="number" min="8" max="40" value="18" size="4" name="tamanho" id="tamanho"> <em>Tamanho da Letra</em></p>
-                                        <input type="button" value="Fazer Alterações..." onclick="verificaCampos()">
-                                    </fieldset>
+                                        <input style="width: 50px" type="number" min="8" max="40" value="18" size="4" name="tamanho" id="tamanho">
+                                        <em>Tamanho da Letra</em>
+                                    </p>
+                                    <input type="button" value="Fazer Alterações..." onclick="verificaCampos()">
+                                </fieldset>
                                 <fieldset>
                                     <legend>Posição:</legend>
                                     <p>
@@ -120,144 +192,90 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    <em><b>Tipos de midia...</b></em>                                    
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    <em>
+                                        <b>Salvar Mídia...</b>
+                                    </em>
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                             <div class="card-body">
-                                                                  
-                                <div id= "social">
-                                    <p> Facebook - 600px X 600px</p>
-                                </div>
-                                <div id= "faixa">
-                                    <p>F A I X A - 2,00m X 0,70m</p>
-                                </div>
-                                <div id= "banner1">
-                                    <P>B A N N E R - 0,70m X 1,00m</P>
-                                  </div>
-                                  <fieldset>
-                                        <legend style= "font-size: 16px"><em><b>Mídias...</b></em></legend>
-                                        <input type="radio" name="item" value="midia1" id= "midia1" checked = "checked"> <label for = "midia1"><em>&nbsp;Facebook - 600px X 600px</em></label> 
-                                        <div id= "social">
-                                             
-                                            </div>
-                                        <input type="radio" name="item" value="midia2" id= "midia2"><label for = "midia2"> <em>&nbsp;F A I X A - 2,00m X 0,70m</em></label>
-                                        <div id= "faixa">
-                                              
-                                            </div>
-                                        <input type="radio" name="item" value="midia3" id= "midia3"><label for = "midia3"> <em>&nbsp;B A N N E R - 0,70m X 1,00m</em></label> 
-                                        <div id= "banner1">
-                                               
-                                              </div>
-                                        
-                                        <br><input type="button" value="Escolher midia..." onclick="escolheMidia()">
-                                        
-                                    </fieldset>
+                                <fieldset>
+                                    <legend style="font-size: 16px">
+                                        <em>
+                                            <b>Exportar Mídia... ".png"</b>
+                                        </em>
+                                    </legend>
+                                    <a id="btn-Convert-Html2Image" href="#">Converter Mídia para "mídia.png"</a>
+                                </fieldset>
                             </div>
                         </div>
                     </div>
-<!-- -------------------------------------------------------------- -->
-
-<div class="card">
-    <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                aria-controls="collapseFour">
-                <em><b>Salvar Mídia...</b></em>                                    
-            </button>
-        </h5>
-    </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-               <fieldset>
-                    <legend style= "font-size: 16px"><em><b>Exportar Mídia... ".png"</b></em></legend>                    
-                    <input id="btn-Preview-Image" type="button" value="Visualizar"/>
-                    <a id="btn-Convert-Html2Image" href="#">Download</a>                    
-                </fieldset>
-        </div>
-    </div>
-</div>
-
-<!-- ---------------------------------------------------------------- -->
+                    <!-- Fim da caixa de ferramentas -->
 
                 </div>
             </div>
             <div class="col-9">
-
+                <!-- Início da Área da Mídia -->
                 <section id="sec">
+                    <!-- Área de criação da Mídia -->
                     <div id="area">
-
                         <div id="back1">
                             <h1 id="titulo"></h1>
                         </div>
-
                         <div class="margin"></div>
-
                         <div id="back2">
                             <h2 id="subtitulo"></h2>
                         </div>
-
                         <div class="margin"></div>
-
                         <p id="data"></p>
                         <p id="hora"></p>
                         <p id="tel"></p>
                         <p id="local"></p>
                         <p id="txtopc"></p>
                     </div>
+                    <!-- Fim da àrea de criação da Mídia  -->
                 </section>
+                <!-- Início da Área de visualização da Mídia Convertida em imgema PNG -->
                 <div id="previewImage">
                 </div>
+                <!-- Fim da Área de visualização da Mídia Convertida em imgema PNG -->
             </div>
         </section>
     </main>
+    <!-- Rodape da página -->
     <footer class="container">
         <p>&copy;2018 - Prefeitura Municipal de São Vicente</p>
     </footer>
     <script>
-        $(document).ready(function(){
-        //   var element = $("#html-content-holder"); // global variable
-        var element = $("#sec"); // global variable
-          var getCanvas; // global variable
-         
-            $("#btn-Preview-Image").on('click', function () {
-              html2canvas(element, {
-                onrendered: function (canvas) {
-                  $("#previewImage").append(canvas);
-                  getCanvas = canvas;
-                }
-              });
-            });
-        
-            $("#btn-Convert-Html2Image").on('click', function () {
-            // var imgageData = getCanvas.toDataURL("image/png");
-            var imgageData = getCanvas.toDataURL("img/png");
-            // Now browser starts downloading it instead of just showing it
-            // var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-            var newData = imgageData.replace(/^data:img\/png/, "data:application/octet-stream");
-            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-            });
-          
-          // $("#btn-Convert-Html2Image").on('click', function () {
-          //   html2canvas(element, {
-          //     onrendered: function (canvas) {
-          //       $("#previewImage").append(canvas);
-          //       getCanvas = canvas;
-          //       var imgageData = getCanvas.toDataURL("image/png");
-          //       var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-          //       $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
-          //     }
-          //   });
-          // });
-        });
-        
-        </script>
-</body>
+        // Rotina de trabalho de conversão da Mídia em .PNG
+        $(document).ready(function () {
+            //   var element = $("#html-content-holder"); // variável global
+            var element = $("#sec"); // variável global
+            var getCanvas; // variável global
 
+            $("#btn-Convert-Html2Image").on('click', function () {
+                html2canvas(element, {
+                    onrendered: function (canvas) {
+                        //Deixa invisível o rascunho da Mídia
+                        $("#sec").css("display", "none");
+                        $("#previewImage").append(canvas);
+                        $("#btn-Convert-Html2Image").text("Salvar Mídia Convertida...");
+                        getCanvas = canvas;
+                        var imgageData = getCanvas.toDataURL("img/png");
+                        var newData = imgageData.replace(/^data:img\/png/, "data:application/octet-stream");
+                        $("#btn-Convert-Html2Image").attr("download", "mídia.png").attr("href", newData);
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
 </html>
